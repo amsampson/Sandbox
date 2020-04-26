@@ -1,4 +1,4 @@
-print('Hello, Thank you for choosing The Lab Chooser 2.0')
+print('Hello, Thank you for choosing The Lab Chooser 3.0')
 print('Password?')
 Password = input()
 while Password != 'Wowie Zowie':
@@ -11,6 +11,7 @@ print('Access granted')
 print()
 
 import random
+import sys
 list=[]
 
 ### Attendence entry
@@ -26,20 +27,29 @@ while x != 'Done': ### loop to type everybody in
         list.append(x)
     print('Please enter more. If finished type: Done')
 
-random.shuffle(list)
 
+def shuffle_list():
+    random.shuffle(list)
 
+    print()
+    print('The order for today is...')
+
+    ### Order lister by line (will list vertically)
+    for name in list:
+        print(name)
+
+        
+shuffle_list()
 print()
-print('The order for today is...')
 
-### Order lister by line (will list vertically)
-r=0
-while r <= len(list):
-    if r == len(list):
-        break
-    print(list[r])
-    r = r+1
-    
-print()
-print('To exit: Please hit ENTER')
-input()
+###reshuffler
+y='reshuffle'
+def reshuffle_list():
+    print('To reshuffle type: reshuffle.  To exit: Please hit ENTER')
+    y=input()
+    if y=='reshuffle':
+        shuffle_list()
+    else:
+        exit()
+while y=='reshuffle':
+    reshuffle_list()
