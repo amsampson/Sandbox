@@ -1,3 +1,6 @@
+import random
+import sys
+
 print('Hello, Thank you for choosing The Lab Chooser 3.0')
 print('Password?')
 Password = input()
@@ -10,22 +13,21 @@ print('Access granted')
 
 print()
 
-import random
-import sys
+
 list=[]
 
 ### Attendence entry
 print('Please enter those in attendance')
 x = input()
 list.append(x)
-print('Please enter more. If finished type: Done')
-while x != 'Done': ### loop to type everybody in
+print('Please enter more. If finished hit ENTER')
+while x != '': ### loop to type everybody in
     x = input()
-    if x == 'Done':
-        break ### This keeps "Done" from being listed
+    if x == '':
+        break 
     else:
         list.append(x)
-    print('Please enter more. If finished type: Done')
+    print('Please enter more. If finished hit ENTER')
 
 
 def shuffle_list():
@@ -47,7 +49,7 @@ y='reshuffle'
 def reshuffle_list():
     print('To reshuffle type: reshuffle.  To exit: Please hit ENTER')
     y=input()
-    if y=='reshuffle':
+    if y.lower()=='reshuffle':
         shuffle_list()
     else:
         exit()
